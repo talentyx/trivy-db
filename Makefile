@@ -37,6 +37,7 @@ lint: $(GOBIN)/golangci-lint
 
 .PHONY: build
 build:
+	go mod tidy
 	go build $(LDFLAGS) ./cmd/trivy-db
 
 .PHONY: build-update
