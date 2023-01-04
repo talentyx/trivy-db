@@ -40,7 +40,7 @@ build:
 	go build $(LDFLAGS) ./cmd/trivy-db
 
 .PHONY: build-update
-build:
+build-update:
 	go build $(LDFLAGS) ./cmd/update-db
 
 .PHONY: clean
