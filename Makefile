@@ -39,6 +39,10 @@ lint: $(GOBIN)/golangci-lint
 build:
 	go build $(LDFLAGS) ./cmd/trivy-db
 
+.PHONY: build-update
+build:
+	go build $(LDFLAGS) ./cmd/update-db
+
 .PHONY: clean
 clean:
 	rm -rf integration/testdata/fixtures/
@@ -66,6 +70,13 @@ db-fetch-langs:
 .PHONY: db-build
 db-build: trivy-db
 	./trivy-db build --cache-dir cache --update-interval 6h
+
+.PHONY: db-update-chn
+db-update-chn: build-update
+    ./oras pull ghcr.io/talentyx/cn-db:3
+	ls -a
+    ./build-update
+
 
 .PHONY: db-compact
 db-compact: $(GOBIN)/bbolt cache/db/trivy.db

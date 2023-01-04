@@ -19,3 +19,6 @@ cache
 
 # trivy-db Outputs
 trivy-db
+cmd/update-db/cn_vuln.db
+cmd/update-db/trivy.db
+cn_vuln.db
