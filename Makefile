@@ -75,7 +75,7 @@ db-build: trivy-db
 db-update-chn: build-update
 	./oras pull ghcr.io/talentyx/cn-db:3
 	ls -a
-	./build-update
+	# ./build-update
 
 
 .PHONY: db-compact
