@@ -67,11 +67,13 @@ func main() {
 					noMatch++
 				}
 
+			} else {
+				noMatch++
 			}
 			return nil
 		})
-		fmt.Printf("update total cve count: %d", totalChange)
-		fmt.Printf("Not match cve count: %d", noMatch)
+		fmt.Printf("update total cve count: %d\n", totalChange)
+		fmt.Printf("Not match cve count: %d\n", noMatch)
 		return nil
 	})
 
